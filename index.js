@@ -3,8 +3,12 @@ const app = express();
 const port = 8000;
 
 //using express router
+//any request comes in goes to routes folder
 app.use("/", require("./routes/"));//by default it finds index.js
 
+//set up the view engine
+app.set('view engine', 'ejs');
+app.set('views', ".views");
 
 app.listen(port, function(err){
     if(err){
